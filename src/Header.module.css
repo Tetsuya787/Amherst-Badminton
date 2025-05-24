@@ -1,0 +1,112 @@
+/* Header.module.css */
+.header {
+  background: linear-gradient(to right, #582C83, #881C1C);
+  color: #FFFFFF;
+  padding: 1.5rem 2rem;
+  text-align: center;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.schoolLogo {
+  height: 60px;
+  width: auto;
+  max-width: 150px;
+  object-fit: contain;
+}
+
+.amherstLogo {
+  filter: brightness(0) invert(1);
+}
+
+.umassLogo {
+  filter: none;
+}
+
+.eventName {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 0.5rem 0;
+  display: inline-block;
+}
+
+.link:hover {
+  color: #A4DE02;
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+  
+  .logoContainer {
+    gap: 1rem;
+  }
+  
+  .schoolLogo {
+    height: 50px;
+    max-width: 120px;
+  }
+  
+  .eventName {
+    font-size: 1.4rem;
+    order: 3;
+    flex-basis: 100%;
+    margin-top: 1rem;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navLinks {
+    gap: 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .eventName {
+    font-size: 1.2rem;
+  }
+}

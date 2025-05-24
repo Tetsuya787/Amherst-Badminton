@@ -1,0 +1,31 @@
+.contact-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+  }
+  
+  .contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-section h2 {
+    color: #582C83;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-section p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .email-link {
+    font-size: 1.2rem;
+    color: #582C83;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .email-link:hover {
+    text-decoration: underline;
+  }

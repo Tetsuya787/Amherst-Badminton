@@ -1,10 +1,41 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  padding: 2rem;
+  flex: 1;
+}
+
+.main-content section {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
+.main-content h2 {
+  color: #582C83;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.main-content p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+/* Rest of your existing styles */
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +70,58 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Add this to your existing Teams page styling */
+.teams-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.team-item {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  border-left: 4px solid #582C83;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.team-item span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Make the teams container more compact */
+.teams-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.teams-section {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.teams-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #582C83;
 }
