@@ -1,9 +1,16 @@
 /* Header.module.css */
+* {
+  box-sizing: border-box;
+}
+
 .header {
   background: linear-gradient(to right, #582C83, #881C1C);
   color: #FFFFFF;
   padding: 1.5rem 2rem;
   text-align: center;
+  width: 100%;
+  max-width: 100vw; /* Ensure it doesn't exceed viewport width */
+  overflow-x: hidden; /* Hide horizontal overflow */
 }
 
 .headerContent {
@@ -15,9 +22,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem; /* Reduce gap on smaller screens */
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .schoolLogo {
@@ -37,9 +45,9 @@
 
 .eventName {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 4vw, 1.8rem); /* Responsive font size */
   font-weight: bold;
-  white-space: nowrap;
+  /* Remove white-space: nowrap to allow wrapping */
 }
 
 .nav {
