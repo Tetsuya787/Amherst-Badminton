@@ -11,6 +11,7 @@ import williamsLogo from "./assets/logos/Williams_logo.png";
 import yaleLogo from "./assets/logos/Yale_Logo.png";
 import bcLogo from "./assets/logos/BC_Logo.png";
 import dartmouthLogo from "./assets/logos/Dartmouth_Logo.png";
+import recwellImage from "./assets/Facilities/recwell.jpg";
 
 function App() {
   // Track the current hash for simple routing
@@ -78,7 +79,59 @@ function App() {
         return (
           <section id="venue">
             <h2>Venue Information</h2>
-            <p>Details about the venue will appear here.</p>
+            <div className="venue-container">
+              <div className="venue-details">
+                <h3>UMass Campus Recreation</h3>
+                
+                {/* Add the recwell image at the top */}
+                <div className="venue-image-container">
+                  <img 
+                    src={recwellImage}
+                    alt="UMass Campus Recreation Center" 
+                    className="venue-image"
+                  />
+                </div>
+                
+                <p>
+                  The tournament will be held at the state-of-the-art UMass Campus Recreation Center, 
+                  featuring premium badminton courts with professional lighting and flooring.
+                </p>
+                
+                <div className="venue-info-grid">
+                  <div className="venue-info-item">
+                    <h4>Address</h4>
+                    <p>UMass Campus Recreation Center<br />
+                       161 Commonwealth Avenue<br />
+                       Amherst, MA 01003</p>
+                  </div>
+                  
+                  <div className="venue-info-item">
+                    <h4>Facilities</h4>
+                    <ul>
+                      <li>8+ badminton courts</li>
+                      <li>Spectator seating</li>
+                      <li>On-site food options</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="venue-directions">
+                  <h4>Getting There</h4>
+                  <p>The Recreation Center is centrally located on the UMass Amherst campus.</p>
+                  <ul>
+                    <li><strong>By Car:</strong> Parking available in the Campus Recreation parking lot</li>
+                    <li><strong>By Bus:</strong> PVTA bus routes stop directly in front of the building</li>
+                    <li><strong>Campus Shuttle:</strong> Regular service from all campus locations</li>
+                  </ul>
+                  <a href="https://maps.app.goo.gl/sbvkyq2E9vfkLRkG7" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="directions-btn">
+                    Get Directions
+                  </a>
+                </div>
+              </div>
+            </div>
           </section>
         );
       case "#teams":
@@ -121,7 +174,6 @@ function App() {
               
               <div className="more-teams">
                 <p><em>More teams coming soon!</em></p>
-                <p>Registration is open until September 15, 2024</p>
               </div>
             </div>
           </section>
