@@ -1,3 +1,9 @@
+/* Force white background globally */
+html, body, #root {
+  background-color: #ffffff !important;
+  color: #213547 !important;
+}
+
 #root {
   width: 100%;
   margin: 0;
@@ -9,13 +15,15 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #ffffff;
 }
 
 .main-content {
   width: 100%;
-  padding: 0; /* Remove padding that might cause overflow */
+  padding: 0;
   flex: 1;
   overflow-x: hidden;
+  background-color: #ffffff;
 }
 
 .main-content section {
@@ -23,7 +31,8 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  box-sizing: border-box; /* Include padding in width calculation */
+  box-sizing: border-box;
+  background-color: #ffffff;
 }
 
 .main-content h2 {
@@ -35,6 +44,7 @@
 .main-content p {
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  color: #444;
 }
 
 /* Hero section styling for homepage */
