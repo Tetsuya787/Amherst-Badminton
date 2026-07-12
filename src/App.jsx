@@ -28,6 +28,11 @@ import scheduleAction from "./assets/AmherstInvitational2025/optimized/player/ac
 import registrationAction from "./assets/AmherstInvitational2025/optimized/player/action-21.jpg";
 import rulesAction from "./assets/AmherstInvitational2025/optimized/player/action-15.jpg";
 
+// Sponsor logos and the Boyden Gymnasium facility photo
+import umassDiningLogo from "./assets/logos/Umass_Dining_Logo.png";
+import YonexLogo from "./assets/logos/Yonex.png";
+import Boyden from "./assets/Facilities/boyden.png";
+
 function App() {
   // Track the current hash for simple routing
   const [currentHash, setCurrentHash] = useState(window.location.hash || "#home");
@@ -266,11 +271,12 @@ function App() {
         return (
           <section id="venue">
             <h2>Venue Information</h2>
+            <p style={{ fontWeight: "bold", fontSize: "1.2rem", marginBottom: "2rem" }}>
+              The tournament will be held at two adjacent gyms on the UMass Amherst campus: Campus Recreation Center and Boyden Gym.
+            </p>
             <div className="venue-container">
               <div className="venue-details">
                 <h3>UMass Campus Recreation</h3>
-                
-                {/* Add the recwell image at the top */}
                 <div className="venue-image-container">
                   <img 
                     src={recwellImage}
@@ -278,12 +284,10 @@ function App() {
                     className="venue-image"
                   />
                 </div>
-                
                 <p>
                   The tournament will be held at the state-of-the-art UMass Campus Recreation Center, 
                   featuring premium badminton courts with professional lighting and flooring.
                 </p>
-                
                 <div className="venue-info-grid">
                   <div className="venue-info-item">
                     <h4>Address</h4>
@@ -291,17 +295,14 @@ function App() {
                        161 Commonwealth Avenue<br />
                        Amherst, MA 01003</p>
                   </div>
-                  
                   <div className="venue-info-item">
                     <h4>Facilities</h4>
                     <ul>
-                      <li>8+ badminton courts</li>
+                      <li>3+ badminton courts</li>
                       <li>Spectator seating</li>
-                      <li>On-site food options</li>
                     </ul>
                   </div>
                 </div>
-                
                 <div className="venue-directions">
                   <h4>Getting There</h4>
                   <p>The Recreation Center is centrally located on the UMass Amherst campus.</p>
@@ -311,6 +312,51 @@ function App() {
                     <li><strong>Campus Shuttle:</strong> Regular service from all campus locations</li>
                   </ul>
                   <a href="https://maps.app.goo.gl/sbvkyq2E9vfkLRkG7" 
+                     target="_blank" 
+                     rel="noopener noreferrer"
+                     className="directions-btn">
+                    Get Directions
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="venue-container">
+              <div className="venue-details">
+                <h3>Boyden Gymnasium</h3>
+                <div className="venue-image-container">
+                  <img 
+                    src={Boyden}
+                    alt="Boyden Gymnasium" 
+                    className="venue-image"
+                  />
+                </div>
+                <p>
+                  Boyden Gymnasium is located adjacent to the Campus Recreation Center and offers additional badminton courts for tournament play. The gym is a historic athletic facility at UMass Amherst, providing ample space for matches and warm-ups.
+                </p>
+                <div className="venue-info-grid">
+                  <div className="venue-info-item">
+                    <h4>Address</h4>
+                    <p>Boyden Gymnasium<br />
+                       131 Commonwealth Avenue<br />
+                       Amherst, MA 01003</p>
+                  </div>
+                  <div className="venue-info-item">
+                    <h4>Facilities</h4>
+                    <ul>
+                      <li>4+ badminton courts</li>
+                      <li>Easy access to Campus Recreation Center</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="venue-directions">
+                  <h4>Getting There</h4>
+                  <p>Boyden Gymnasium is adjacent to the Campus Recreation Center, making it easy to move between venues.</p>
+                  <ul>
+                    <li><strong>By Car:</strong> Parking available nearby</li>
+                    <li><strong>By Bus:</strong> PVTA bus routes stop close to Boyden Gym</li>
+                    <li><strong>Campus Shuttle:</strong> Regular service from all campus locations</li>
+                  </ul>
+                  <a href="https://maps.app.goo.gl/8w6XJvFJvJvK2wJv7" 
                      target="_blank" 
                      rel="noopener noreferrer"
                      className="directions-btn">
@@ -382,6 +428,31 @@ function App() {
           rulesAction,
           "View Teams",
           "#teams"
+        );
+      case "#sponsors":
+        return (
+          <section id="sponsors">
+            <h2>Our Sponsors</h2>
+            <div className="sponsors-container">
+              <div className="sponsor-card">
+                <img
+                  src= {YonexLogo}
+                  alt="Yonex"
+                  className="sponsor-logo"
+                />
+                <span className="sponsor-name">Yonex</span>
+              </div>
+              <div className="sponsor-card">
+                <img
+                  src= {umassDiningLogo}
+                  alt="UMass Amherst Dining"
+                  className="sponsor-logo"
+                />
+                <span className="sponsor-name">UMass Amherst Dining</span>
+              </div>
+              {/* Add more sponsors as needed */}
+            </div>
+          </section>
         );
       case "#home":
       default:
