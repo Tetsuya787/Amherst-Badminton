@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Contact from "./Contact";
+import Gallery from "./Gallery";
 import "./App.css";
 
 // Import team logos
@@ -13,7 +14,19 @@ import bcLogo from "./assets/logos/BC_Logo.png";
 import dartmouthLogo from "./assets/logos/Dartmouth_Logo.png";
 import brownLogo from "./assets/logos/brown-logo.png";
 import recwellImage from "./assets/Facilities/recwell.jpg";
-import teamImage from "./assets/players/Team1.jpg";
+
+// Photos from the 2025 Amherst Badminton Invitational
+import teamImage from "./assets/AmherstInvitational2025/optimized/group/team-2.jpg";
+import amherstTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/amherst-college.jpg";
+import umassTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/umass.jpg";
+import williamsTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/williams.jpg";
+import yaleTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/yale.jpg";
+import brownTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/brown.jpg";
+import bcTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/boston-college.jpg";
+import dartmouthTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/dartmouth.jpg";
+import scheduleAction from "./assets/AmherstInvitational2025/optimized/player/action-05.jpg";
+import registrationAction from "./assets/AmherstInvitational2025/optimized/player/action-21.jpg";
+import rulesAction from "./assets/AmherstInvitational2025/optimized/player/action-15.jpg";
 
 function App() {
   // Track the current hash for simple routing
@@ -34,6 +47,17 @@ function App() {
     "MIT": "https://1000logos.net/wp-content/uploads/2022/08/MIT-Logo.png"
   };
 
+  // Team photos from the 2025 Invitational (not all teams have one on file)
+  const teamPhotos = {
+    "Amherst College": amherstTeamPhoto,
+    "UMass Amherst": umassTeamPhoto,
+    "Williams College": williamsTeamPhoto,
+    "Yale University": yaleTeamPhoto,
+    "Boston College": bcTeamPhoto,
+    "Dartmouth College": dartmouthTeamPhoto,
+    "Brown University": brownTeamPhoto,
+  };
+
   // Update the hash state when the URL changes
   useEffect(() => {
     const handleHashChange = () => {
@@ -52,11 +76,38 @@ function App() {
     }));
   };
 
+  // Function to create upcoming section with different images and content
+  const createUpcomingSection = (id, title, subtitle, message, backgroundImage, ctaText = "Stay Tuned", ctaLink = "#home") => {
+    return (
+      <section id={id} className="upcoming-section">
+        <div className="upcoming-background">
+          <img 
+            src={backgroundImage}
+            alt={`${title} background`}
+            className="upcoming-background-image"
+          />
+          <div className="upcoming-overlay"></div>
+        </div>
+        
+        <div className="upcoming-content">
+          <h1 className="upcoming-title">{title}</h1>
+          <p className="upcoming-subtitle">{subtitle}</p>
+          <p className="upcoming-message">{message}</p>
+          <div className="upcoming-cta">
+            <a href={ctaLink} className="upcoming-btn">{ctaText}</a>
+          </div>
+        </div>
+      </section>
+    );
+  };
+
   // Render different sections based on the hash
   const renderContent = () => {
     switch(currentHash) {
       case "#contact":
         return <Contact />;
+      case "#gallery":
+        return <Gallery />;
       case "#about":
         return (
           <section id="about">
@@ -192,18 +243,24 @@ function App() {
           </section>
         );
       case "#schedule":
-        return (
-          <section id="schedule">
-            <h2>Tournament Schedule</h2>
-            <p>Schedule details will appear here.</p>
-          </section>
+        return createUpcomingSection(
+          "schedule",
+          "Tournament Schedule",
+          "Coming Soon",
+          "Detailed tournament schedule, brackets, and match times will be available soon. Check back for updates on when and where your matches will take place.",
+          scheduleAction,
+          "View About",
+          "#about"
         );
       case "#registration":
-        return (
-          <section id="registration">
-            <h2>Registration</h2>
-            <p>Registration information will appear here.</p>
-          </section>
+        return createUpcomingSection(
+          "registration",
+          "Registration",
+          "Opening Soon",
+          "Player registration will open in the coming weeks. Get ready to secure your spot in this exciting tournament!",
+          registrationAction,
+          "Learn More",
+          "#about"
         );
       case "#venue":
         return (
@@ -272,28 +329,36 @@ function App() {
             <div className="teams-container">
               <div className="teams-section">
                 <h3>Committed Teams</h3>
-                <ul className="teams-list">
+                <ul className="teams-list teams-list-photos">
                   {['Amherst College', 'UMass Amherst', 'Williams College', 'Yale University', 'Brown University', 'Boston College', 'Dartmouth College'].map(team => (
                     <li key={team} className="team-item">
-                      <img 
-                        src={teamLogos[team]} 
-                        alt={team} 
-                        className="team-logo"
+                      <img
+                        src={teamPhotos[team]}
+                        alt={`${team} at the 2025 Invitational`}
+                        className="team-photo"
+                        loading="lazy"
                       />
-                      <span>{team}</span>
+                      <div className="team-item-footer">
+                        <img
+                          src={teamLogos[team]}
+                          alt={team}
+                          className="team-logo"
+                        />
+                        <span>{team}</span>
+                      </div>
                     </li>
                   ))}
                 </ul>
               </div>
-              
+
               <div className="teams-section">
                 <h3>Interested Teams</h3>
                 <ul className="teams-list">
                   {['Harvard University', 'MIT'].map(team => (
                     <li key={team} className="team-item">
-                      <img 
-                        src={teamLogos[team]} 
-                        alt={team} 
+                      <img
+                        src={teamLogos[team]}
+                        alt={team}
                         className="team-logo"
                       />
                       <span>{team}</span>
@@ -301,7 +366,7 @@ function App() {
                   ))}
                 </ul>
               </div>
-              
+
               <div className="more-teams">
                 <p><em>More teams coming soon!</em></p>
               </div>
@@ -309,11 +374,14 @@ function App() {
           </section>
         );
       case "#rules":
-        return (
-          <section id="rules">
-            <h2>Tournament Rules</h2>
-            <p>Tournament rules will appear here.</p>
-          </section>
+        return createUpcomingSection(
+          "rules",
+          "Tournament Rules",
+          "Under Development",
+          "Official tournament rules and regulations are being finalized. Stay tuned for complete competition guidelines and format details.",
+          rulesAction,
+          "View Teams",
+          "#teams"
         );
       case "#home":
       default:

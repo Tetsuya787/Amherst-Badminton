@@ -29,6 +29,7 @@ const Header = ({ currentHash = "#home" }) => {
             <li><a href="#registration" className={styles.link}>Registration</a></li>
             <li><a href="#venue" className={styles.link}>Venue</a></li>
             <li><a href="#teams" className={styles.link}>Teams</a></li>
+            <li><a href="#gallery" className={styles.link}>Gallery</a></li>
             <li><a href="#rules" className={styles.link}>Rules</a></li>
             <li><a href="#contact" className={styles.link}>Contact</a></li>
           </ul>

@@ -27,7 +27,7 @@ html, body, #root {
 }
 
 .main-content section {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -163,7 +163,7 @@ html, body, #root {
   z-index: 3;
   text-align: center;
   color: white;
-  max-width: 900px;
+  max-width: 1100px;
   padding: 2rem;
   margin: 0 auto;
 }
@@ -293,7 +293,7 @@ html, body {
 }
 
 .main-content section {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -370,6 +370,38 @@ html, body {
   text-align: center;
 }
 
+/* Committed team cards with a photo from the tournament */
+.teams-list-photos {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.teams-list-photos .team-item {
+  padding: 0;
+  align-items: stretch;
+  gap: 0;
+  overflow: hidden;
+}
+
+.team-photo {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.team-item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.team-item-footer .team-logo {
+  width: 36px;
+  height: 36px;
+}
+
 /* Make the teams container more compact */
 .teams-container {
   display: flex;
@@ -393,7 +425,7 @@ html, body {
 
 /* Venue section styling */
 .venue-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -580,7 +612,7 @@ html, body {
 }
 
 .about-content {
-  max-width: 1000px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
@@ -690,17 +722,21 @@ html, body {
 
 .tournament-stats {
   background: linear-gradient(135deg, #582C83, #881C1C);
-  color: white;
+  color: white !important;
   padding: 3rem 2rem;
   border-radius: 12px;
   margin-top: 3rem;
 }
 
 .tournament-stats h3 {
-  color: white;
+  color: white !important;
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
+}
+
+.tournament-stats * {
+  color: white !important;
 }
 
 .stats-grid {
@@ -721,69 +757,158 @@ html, body {
   display: block;
   font-size: 3rem;
   font-weight: bold;
-  color: #fff;
+  color: #fff !important;
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.9) !important;
   font-weight: 500;
 }
 
-/* Responsive Design for About Section */
+/* Upcoming Section - Reusable component */
+.upcoming-section {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.upcoming-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.upcoming-background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.upcoming-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(88, 44, 131, 0.85) 0%,
+    rgba(136, 28, 28, 0.75) 100%
+  );
+  z-index: 2;
+}
+
+.upcoming-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  color: #ffffff !important;
+  max-width: 950px;
+  padding: 3rem 2rem;
+  margin: 0 auto;
+}
+
+.upcoming-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  line-height: 1.2;
+  color: #ffffff !important;
+}
+
+.upcoming-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.4;
+  color: #ffffff !important;
+}
+
+.upcoming-message {
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+  color: #ffffff !important;
+}
+
+.upcoming-cta {
+  margin-top: 2rem;
+}
+
+.upcoming-btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.upcoming-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  color: #ffffff !important;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .about-intro {
-    font-size: 1.1rem;
+  .upcoming-section {
+    min-height: 50vh;
   }
   
-  .about-hero {
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .highlight-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .highlight-item {
-    padding: 1.5rem;
-  }
-  
-  .why-participate {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .participation-reason {
-    padding: 1.5rem;
-  }
-  
-  .tournament-stats {
+  .upcoming-content {
     padding: 2rem 1.5rem;
   }
   
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  .upcoming-title {
+    font-size: 2.2rem;
   }
   
-  .stat-number {
-    font-size: 2.5rem;
+  .upcoming-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .upcoming-message {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .stats-grid {
-    grid-template-columns: 1fr;
+  .upcoming-section {
+    min-height: 45vh;
   }
   
-  .about-section h3 {
-    font-size: 1.5rem;
+  .upcoming-title {
+    font-size: 1.8rem;
   }
   
-  .tournament-stats h3 {
-    font-size: 1.7rem;
+  .upcoming-subtitle {
+    font-size: 1rem;
+  }
+  
+  .upcoming-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
   }
 }
