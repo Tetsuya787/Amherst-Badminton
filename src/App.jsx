@@ -397,22 +397,6 @@ function App() {
                 </ul>
               </div>
 
-              <div className="teams-section">
-                <h3>Interested Teams</h3>
-                <ul className="teams-list">
-                  {['Harvard University', 'MIT'].map(team => (
-                    <li key={team} className="team-item">
-                      <img
-                        src={teamLogos[team]}
-                        alt={team}
-                        className="team-logo"
-                      />
-                      <span>{team}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               <div className="more-teams">
                 <p><em>More teams coming soon!</em></p>
               </div>
