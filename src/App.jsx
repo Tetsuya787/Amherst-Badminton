@@ -127,18 +127,18 @@ function App() {
                 />
               </div>
               <p className="about-intro">
-                The Amherst Badminton Invitational 2025 brings together the best collegiate badminton players 
+                The Amherst Badminton Invitational 2026 brings together the best collegiate badminton players
                 from across New England for an exciting weekend of competition, sportsmanship, and camaraderie.
               </p>
             </div>
-            
+
             <div className="about-content">
               <div className="about-section">
                 <h3>Tournament Overview</h3>
                 <p>
-                  This inaugural invitational tournament is a collaborative effort between Amherst College 
-                  and UMass Amherst, designed to showcase the growing badminton talent in the region. 
-                  The tournament features multiple competitive divisions and welcomes players of all skill levels.
+                  Following a successful inaugural tournament in 2025, this invitational is a collaborative effort
+                  between Amherst College and UMass Amherst, designed to showcase the growing badminton talent in
+                  the region. The tournament features multiple competitive divisions and welcomes players of all skill levels.
                 </p>
               </div>
 
@@ -371,10 +371,13 @@ function App() {
         return (
           <section id="teams">
             <h2>Participating Teams</h2>
-            
+
             <div className="teams-container">
               <div className="teams-section">
-                <h3>Committed Teams</h3>
+                <h3>2025 Participating Teams</h3>
+                <p className="teams-section-note">
+                  These teams competed in last year's inaugural tournament. The 2026 lineup is still being finalized.
+                </p>
                 <ul className="teams-list teams-list-photos">
                   {['Amherst College', 'UMass Amherst', 'Williams College', 'Yale University', 'Brown University', 'Boston College', 'Dartmouth College'].map(team => (
                     <li key={team} className="team-item">
@@ -398,7 +401,7 @@ function App() {
               </div>
 
               <div className="more-teams">
-                <p><em>More teams coming soon!</em></p>
+                <p><em>2026 team announcements coming soon!</em></p>
               </div>
             </div>
           </section>
@@ -452,7 +455,7 @@ function App() {
             </div>
             
             <div className="hero-content-overlay">
-              <h1 className="hero-title">Amherst Badminton Invitational 2025</h1>
+              <h1 className="hero-title">Amherst Badminton Invitational 2026</h1>
               <p className="hero-subtitle">Join us for an exciting tournament hosted by Amherst College & UMass Amherst</p>  
               <div className="hero-buttons">
                 <a href="#registration" className="btn btn-primary">Register Now</a>
