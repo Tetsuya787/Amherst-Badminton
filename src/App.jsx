@@ -30,8 +30,18 @@ import rulesAction from "./assets/AmherstInvitational2025/optimized/player/actio
 
 // Sponsor logos and the Boyden Gymnasium facility photo
 import umassDiningLogo from "./assets/logos/Umass_Dining_Logo.png";
-import YonexLogo from "./assets/logos/Yonex.png";
+import victorLogo from "./assets/logos/Victor_Logo.png";
+import emeetLogo from "./assets/logos/Emeet_Logo.png";
+import weeeLogo from "./assets/logos/Weee_Logo.png";
 import Boyden from "./assets/Facilities/boyden.png";
+
+// 2026 sponsors, each linking to their website
+const sponsors = [
+  { name: "VICTOR Badminton", logo: victorLogo, url: "https://www.victorsport.com" },
+  { name: "UMass Amherst Dining", logo: umassDiningLogo, url: "https://umassdining.com" },
+  { name: "EMEET", logo: emeetLogo, url: "https://emeet.com" },
+  { name: "Weee!", logo: weeeLogo, url: "https://www.sayweee.com" }
+];
 
 function App() {
   // Track the current hash for simple routing
@@ -421,23 +431,22 @@ function App() {
           <section id="sponsors">
             <h2>Our Sponsors</h2>
             <div className="sponsors-container">
-              <div className="sponsor-card">
-                <img
-                  src= {YonexLogo}
-                  alt="Yonex"
-                  className="sponsor-logo"
-                />
-                <span className="sponsor-name">Yonex</span>
-              </div>
-              <div className="sponsor-card">
-                <img
-                  src= {umassDiningLogo}
-                  alt="UMass Amherst Dining"
-                  className="sponsor-logo"
-                />
-                <span className="sponsor-name">UMass Amherst Dining</span>
-              </div>
-              {/* Add more sponsors as needed */}
+              {sponsors.map((sponsor) => (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sponsor-card"
+                >
+                  <img
+                    src={sponsor.logo}
+                    alt={sponsor.name}
+                    className="sponsor-logo"
+                  />
+                  <span className="sponsor-name">{sponsor.name}</span>
+                </a>
+              ))}
             </div>
           </section>
         );

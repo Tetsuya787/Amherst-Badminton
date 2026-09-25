@@ -67,11 +67,19 @@ html, body, #root {
   align-items: center;
   min-width: 200px;
   max-width: 250px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sponsor-card:hover,
+.sponsor-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(88,44,131,0.18);
 }
 
 .sponsor-logo {
-  width: 120px;
-  height: auto;
+  width: 160px;
+  height: 90px;
   margin-bottom: 1rem;
   object-fit: contain;
 }
