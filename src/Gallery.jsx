@@ -34,7 +34,7 @@ const actionPhotos = Object.keys(actionPhotoModules)
   .sort()
   .map((path) => ({
     src: actionPhotoModules[path],
-    caption: "Amherst Badminton Invitational 2025",
+    caption: "Amherst Invitational 2025",
   }));
 
 const Gallery = () => {
@@ -66,7 +66,7 @@ const Gallery = () => {
     <section id="gallery" className="gallery-section">
       <h2>Gallery</h2>
       <p className="gallery-intro">
-        Highlights from the 2025 Amherst Badminton Invitational — team photos
+        Highlights from the 2025 Amherst Invitational — team photos
         and action shots from the courts.
       </p>
 

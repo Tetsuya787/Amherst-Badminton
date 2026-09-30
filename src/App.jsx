@@ -8,6 +8,7 @@ import "./App.css";
 // Import team logos
 import amherstLogo from "./assets/logos/AC_Logo.png";
 import umassLogo from "./assets/logos/UMass_Logo.png";
+import umassClubLogo from "./assets/logos/UMass_Club_Logo_white.png";
 import williamsLogo from "./assets/logos/Williams_logo.png";
 import yaleLogo from "./assets/logos/Yale_Logo.png";
 import bcLogo from "./assets/logos/BC_Logo.png";
@@ -15,7 +16,7 @@ import dartmouthLogo from "./assets/logos/Dartmouth_Logo.png";
 import brownLogo from "./assets/logos/brown-logo.png";
 import recwellImage from "./assets/Facilities/recwell.jpg";
 
-// Photos from the 2025 Amherst Badminton Invitational
+// Photos from the 2025 Amherst Invitational
 import teamImage from "./assets/AmherstInvitational2025/optimized/group/team-2.jpg";
 import amherstTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/amherst-college.jpg";
 import umassTeamPhoto from "./assets/AmherstInvitational2025/optimized/group/umass.jpg";
@@ -137,7 +138,7 @@ function App() {
                 />
               </div>
               <p className="about-intro">
-                The Amherst Badminton Invitational 2026 brings together the best collegiate badminton players
+                The Amherst Invitational 2026 brings together the best collegiate badminton players
                 from across New England for an exciting weekend of competition, sportsmanship, and camaraderie.
               </p>
             </div>
@@ -464,8 +465,14 @@ function App() {
             </div>
             
             <div className="hero-content-overlay">
-              <h1 className="hero-title">Amherst Badminton Invitational 2026</h1>
-              <p className="hero-subtitle">Join us for an exciting tournament hosted by Amherst College & UMass Amherst</p>  
+              <h1 className="hero-title">Amherst Invitational 2026</h1>
+              <p className="hero-subtitle">Join us for an exciting collegiate badminton tournament</p>
+              <div className="hero-hosts">
+                <span className="hero-hosts-label">Hosted by</span>
+                <img src={amherstLogo} alt="Amherst College" className="hero-host-logo hero-host-logo-amherst" />
+                <span className="hero-hosts-divider" aria-hidden="true"></span>
+                <img src={umassClubLogo} alt="UMass Amherst Badminton" className="hero-host-logo" />
+              </div>
               <div className="hero-buttons">
                 <a href="#registration" className="btn btn-primary">Register Now</a>
                 <a href="#about" className="btn btn-secondary">Learn More</a>

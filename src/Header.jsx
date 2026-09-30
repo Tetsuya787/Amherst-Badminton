@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./Header.module.css";
-import amherstLogo from "./assets/logos/AC_Logo.png";
-import umassLogo from "./assets/logos/UMass_Logo.png";
 
 const Header = ({ currentHash = "#home" }) => {
   return (
@@ -9,15 +7,15 @@ const Header = ({ currentHash = "#home" }) => {
       <div className={styles.headerContent}>
         <div className={styles.logoContainer}>
           <img 
-            src={amherstLogo} 
-            alt="Amherst College" 
-            className={`${styles.schoolLogo} ${styles.amherstLogo}`} 
+            src="/logo-transparent.png" 
+            alt="Amherst Invitational logo" 
+            className={styles.eventLogo} 
           />
-          <h1 className={styles.eventName}>Amherst Badminton Invitational</h1>
+          <h1 className={styles.eventName}>Amherst Invitational</h1>
           <img 
-            src={umassLogo} 
-            alt="UMass Amherst" 
-            className={`${styles.schoolLogo} ${styles.umassLogo}`}
+            src="/logo-transparent.png" 
+            alt="" 
+            className={styles.eventLogo} 
           />
         </div>
 

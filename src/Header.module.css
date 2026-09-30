@@ -28,19 +28,15 @@
   width: 100%;
 }
 
-.schoolLogo {
-  height: 60px;
-  width: auto;
-  max-width: 150px;
+.eventLogo {
+  height: 90px;
+  width: 90px;
   object-fit: contain;
-}
-
-.amherstLogo {
-  filter: brightness(0) invert(1);
-}
-
-.umassLogo {
-  filter: none;
+  /* thin white outline so the colored logo separates from the gradient */
+  filter: drop-shadow(1px 0 0 #FFFFFF)
+          drop-shadow(-1px 0 0 #FFFFFF)
+          drop-shadow(0 1px 0 #FFFFFF)
+          drop-shadow(0 -1px 0 #FFFFFF);
 }
 
 .eventName {
@@ -91,9 +87,9 @@
     gap: 1rem;
   }
   
-  .schoolLogo {
-    height: 50px;
-    max-width: 120px;
+  .eventLogo {
+    height: 64px;
+    width: 64px;
   }
   
   .eventName {
